@@ -16,11 +16,26 @@ services:
         MYSQL_PASSWORD: password
       ports:
         - 3316:3306
+
+  infinispan:
+      image: quay.io/infinispan/server-native:14.0.11.Final-1
+      command:
+        - -c remote-ispn-config-custom.xml
+      volumes:
+        - ./remote-ispn-config-custom.xml:/opt/infinispan/server/conf/remote-ispn-config-custom.xml
+      ports:
+        - 11222:11222
+      environment:
+        USER: admin
+        PASS: admin
+        INFINISPAN_CACHE_STATISTIC: true
+
   keycloak:
       image: quay.io/keycloak/keycloak:22.0.1
       command: start-dev
       volumes:
         - ./providers-vol:/opt/keycloak/providers
+        - ./keycloak-ispn-config-custom.xml:/opt/keycloak/conf/cache-ispn.xml
       environment:
         KC_DB: mysql
         KC_DB_URL_HOST: mysql
@@ -28,9 +43,18 @@ services:
         KC_DB_PASSWORD: password
         KEYCLOAK_ADMIN: admin
         KEYCLOAK_ADMIN_PASSWORD: admin
+        KC_CACHE: ispn
         # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the MySQL JDBC driver documentation in order to use it.
         #JDBC_PARAMS: "connectTimeout=30000"
+        # custom
+        KC_REMOTE_ISPN_HOST: infinispan
+        KC_REMOTE_ISPN_PORT: 11222
+        KC_REMOTE_ISPN_USERNAME: admin
+        KC_REMOTE_ISPN_PASSWORD: admin
+
       ports:
         - 8080:8080
+#        - 11222:11222 # for infinispan monitoring
       depends_on:
         - mysql
+        - infinispan
