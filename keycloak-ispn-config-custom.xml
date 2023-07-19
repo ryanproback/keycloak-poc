@@ -48,9 +48,9 @@
                 <property name="rawValues">true</property>
                 <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory</property>
                 <security>
-                    <authentication>
-                        <plain username="${env.KC_REMOTE_ISPN_USERNAME}"
-                               password="${env.KC_REMOTE_ISPN_PASSWORD}"
+                    <authentication server-name="infinispan">
+                        <diest username="${env.KC_REMOTE_ISPN_USERNAME}"
+                               password="${env.KC_REMOTE_ISPN_PASSWORD}" realm="default"
                         />
                     </authentication>
                 </security>
@@ -67,9 +67,9 @@
                 <property name="rawValues">true</property>
                 <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory</property>
                 <security>
-                    <authentication>
-                        <plain username="${env.KC_REMOTE_ISPN_USERNAME}"
-                               password="${env.KC_REMOTE_ISPN_PASSWORD}"
+                    <authentication server-name="infinispan">
+                        <diest username="${env.KC_REMOTE_ISPN_USERNAME}"
+                               password="${env.KC_REMOTE_ISPN_PASSWORD}" realm="default"
                         />
                     </authentication>
                 </security>
@@ -88,9 +88,9 @@
                     <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory
                     </property>
                     <security>
-                        <authentication>
-                            <plain username="${env.KC_REMOTE_ISPN_USERNAME}"
-                                   password="${env.KC_REMOTE_ISPN_PASSWORD}"
+                        <authentication server-name="infinispan">
+                            <diest username="${env.KC_REMOTE_ISPN_USERNAME}"
+                                   password="${env.KC_REMOTE_ISPN_PASSWORD}" realm="default"
                             />
                         </authentication>
                     </security>
@@ -107,11 +107,12 @@
                               shared="true" segmented="false">
                     <remote-server host="${env.KC_REMOTE_ISPN_HOST}" port="${env.KC_REMOTE_ISPN_PORT}"/>
                     <property name="rawValues">true</property>
-                    <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory</property>
+                    <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory
+                    </property>
                     <security>
-                        <authentication>
-                            <plain username="${env.KC_REMOTE_ISPN_USERNAME}"
-                                   password="${env.KC_REMOTE_ISPN_PASSWORD}"
+                        <authentication server-name="infinispan">
+                            <diest username="${env.KC_REMOTE_ISPN_USERNAME}"
+                                   password="${env.KC_REMOTE_ISPN_PASSWORD}" realm="default"
                             />
                         </authentication>
                     </security>
@@ -128,11 +129,12 @@
                               shared="true" segmented="false">
                     <remote-server host="${env.KC_REMOTE_ISPN_HOST}" port="${env.KC_REMOTE_ISPN_PORT}"/>
                     <property name="rawValues">true</property>
-                    <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory</property>
+                    <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory
+                    </property>
                     <security>
-                        <authentication>
-                            <plain username="${env.KC_REMOTE_ISPN_USERNAME}"
-                                   password="${env.KC_REMOTE_ISPN_PASSWORD}"
+                        <authentication server-name="infinispan">
+                            <diest username="${env.KC_REMOTE_ISPN_USERNAME}"
+                                   password="${env.KC_REMOTE_ISPN_PASSWORD}" realm="default"
                             />
                         </authentication>
                     </security>
@@ -149,11 +151,12 @@
                               shared="true" segmented="false">
                     <remote-server host="${env.KC_REMOTE_ISPN_HOST}" port="${env.KC_REMOTE_ISPN_PORT}"/>
                     <property name="rawValues">true</property>
-                    <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory</property>
+                    <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory
+                    </property>
                     <security>
-                        <authentication>
-                            <plain username="${env.KC_REMOTE_ISPN_USERNAME}"
-                                   password="${env.KC_REMOTE_ISPN_PASSWORD}"
+                        <authentication server-name="infinispan">
+                            <diest username="${env.KC_REMOTE_ISPN_USERNAME}"
+                                   password="${env.KC_REMOTE_ISPN_PASSWORD}" realm="default"
                             />
                         </authentication>
                     </security>
@@ -196,9 +199,9 @@
                     <property name="marshaller">org.keycloak.cluster.infinispan.KeycloakHotRodMarshallerFactory
                     </property>
                     <security>
-                        <authentication>
-                            <plain username="${env.KC_REMOTE_ISPN_USERNAME}"
-                                   password="${env.KC_REMOTE_ISPN_PASSWORD}"
+                        <authentication server-name="infinispan">
+                            <diest username="${env.KC_REMOTE_ISPN_USERNAME}"
+                                   password="${env.KC_REMOTE_ISPN_PASSWORD}" realm="default"
                             />
                         </authentication>
                     </security>
